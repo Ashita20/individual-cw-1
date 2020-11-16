@@ -14,13 +14,50 @@
         <header>
             <h1 v-text="sitename"></h1>
             <button v-on:click="showCart">
-                {{ cartItemCount}}
+                {{cartItemCount}}
                 <span class="fas fa-cart-plus"></span>
                 Cart
             </button>
         </header>
         <main>
+            <div v-if="showLesson">
+                <div v-for="lesson in lessons">
+                    <figure>
+                        <img v-bind:src="lesson.image">
+                    </figure>
+                    <h2 v-text="lesson.subject"></h2>
+                    <p v-text="lesson.location"></p>
+                    <p> Price: AED {{lesson.price}} </p>
+                    <!--when lesson is added to cart, one space is reduced-->
+                    <p> Available Spaces: {{lesson.availableSpaces}} </p>
+                </div>
+            </div>
+            <div v-else>
+                <h2> Cart </h2>
+            </div>
         </main>
     </div>
+
+    <script>
+        var school = new Vue ({
+            el: "#app",
+            data:{
+                sitename: "Lessons",
+                showLesson: true,
+                lessons: lessons,
+                cart:[]
+            },
+            methods: {
+                showCart () {
+                    this.showLesson = this.showLesson ? false : true;
+                }
+            },
+            computed: {
+                cartItemCount: function () {
+                    return this.cart.length;
+                }
+            },
+        });
+    </script>
 </body>
 </html>
