@@ -29,7 +29,22 @@
                     <p v-text="lesson.location"></p>
                     <p> Price: AED {{lesson.price}} </p>
                     <!--when lesson is added to cart, one space is reduced-->
-                    <p> Available Spaces: {{lesson.availableSpaces}} </p>
+                    <p> Available Spaces: {{lesson.availableSpaces - cartCount(lesson.id)}} </p>
+
+                    <button v-on:click="addToCart(lesson)"
+                        v-if="canAddToCart(lesson)">
+                        Add to Cart
+                    </button>
+                    <button disabled="disabled" v-else>
+                        Add to Cart
+                    </button>
+                    <span v-if="lesson.availableSpaces === cartCount(lesson.id)">
+                        All lessons booked!
+                    </span>
+                    <span v-else-if="lesson.availableSpaces - cartCount(lesson.id) < 5">
+                        Only {{lesson.availableSpaces - cartCount(lesson.id)}} left!
+                    </span>
+                    <span v-else> Book Lesson! </span>
                 </div>
             </div>
             <div v-else>
@@ -50,6 +65,21 @@
             methods: {
                 showCart () {
                     this.showLesson = this.showLesson ? false : true;
+                },
+                addToCart(lesson) {
+                    this.cart.push(lesson.id);
+                },
+                canAddToCart(lesson) {
+                    return lesson.availableSpaces > this.cartCount(lesson.id);
+                },
+                cartCount(id) {
+                    let count = 0;
+                    for (let i = 0; i < this.cart.length; i++) {
+                        if(this.cart[i] === id) {
+                            count++;
+                        }
+                    }
+                    return count;
                 }
             },
             computed: {
