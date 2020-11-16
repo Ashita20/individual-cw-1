@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Lessons </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="lessons.js"></script>
+    <link href = "style.css" rel = "stylesheet" type = "text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1 v-text="sitename"></h1>
+            <button v-on:click="showCart">
+                {{ cartItemCount}}
+                <span class="fas fa-cart-plus"></span>
+                Cart
+            </button>
+        </header>
+        <main>
+        </main>
+    </div>
+</body>
+</html>
