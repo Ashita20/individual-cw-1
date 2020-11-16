@@ -4,7 +4,7 @@ let lessons = [
         "subject":"Math",
         "location":"Dubai",
         "price":120,
-        "image":"../Images/math.jpg",
+        "image":"Images/math.jpg",
         "availableSpaces": 5
     },
     {
@@ -12,7 +12,7 @@ let lessons = [
         "subject":"English",
         "location":"Abu Dhabi",
         "price":100,
-        "image":"../Images/english.png",
+        "image":"Images/english.png",
         "availableSpaces": 5
     },
     {
@@ -20,7 +20,7 @@ let lessons = [
         "subject":"History",
         "location":"Sharjah",
         "price":85,
-        "image":"../Images/history.png",
+        "image":"Images/history.png",
         "availableSpaces": 5
     },
     {
@@ -28,7 +28,7 @@ let lessons = [
         "subject":"Geography",
         "location":"Ajman",
         "price":90,
-        "image":"../Images/geography.jpg",
+        "image":"Images/geography.jpg",
         "availableSpaces": 5
     },
     {
@@ -36,7 +36,7 @@ let lessons = [
         "subject":"Information Technology",
         "location":"Al Ain",
         "price":110,
-        "image":"../Images/IT.jpg",
+        "image":"Images/IT.jpg",
         "availableSpaces": 5
     },
     {
@@ -44,7 +44,7 @@ let lessons = [
         "subject":"Music",
         "location":"Abu Dhabi",
         "price":220,
-        "image":"../Images/music.png",
+        "image":"Images/music.png",
         "availableSpaces": 5
     },
     {
@@ -52,7 +52,7 @@ let lessons = [
         "subject":"Dance",
         "location":"Dubai",
         "price":250,
-        "image":"../Images/dance.jpg",
+        "image":"Images/dance.jpg",
         "availableSpaces": 5
     },
     {
@@ -60,7 +60,7 @@ let lessons = [
         "subject":"Art",
         "location":"Sharjah",
         "price":170,
-        "image":"../Images/art.jpg",
+        "image":"Images/art.jpg",
         "availableSpaces": 5
     },
     {
@@ -68,7 +68,7 @@ let lessons = [
         "subject":"Business",
         "location":"Ajman",
         "price":150,
-        "image":"../Images/business.jpg",
+        "image":"Images/business.jpg",
         "availableSpaces": 5
     },
     {
@@ -76,7 +76,7 @@ let lessons = [
         "subject":"Psychology",
         "location":"Dubai",
         "price":180,
-        "image":"../Images/psych.jpg",
+        "image":"Images/psych.jpg",
         "availableSpaces": 5
     }
 ]
