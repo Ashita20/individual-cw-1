@@ -13,7 +13,9 @@
     <div id="app">
         <header>
             <h1 v-text="sitename"></h1>
-            <button v-on:click="showCart">
+            <button
+                v-on:click="showCart"
+                v-show="cartItemCount">
                 {{cartItemCount}}
                 <span class="fas fa-cart-plus"></span>
                 Cart
@@ -49,6 +51,18 @@
             </div>
             <div v-else>
                 <h2> Cart </h2>
+                <h2> Checkout </h2>
+                <p>
+                    <strong> Name: </strong>
+                    <input v-model="order.name"/>
+                </p>
+                <p>
+                    <strong> Phone Number: </strong>
+                    <input v-model.number="order.phone" type="number"/>
+                </p>
+                <button v-on:click="submitForm">
+                Checkout
+                </button>
             </div>
         </main>
     </div>
@@ -60,7 +74,11 @@
                 sitename: "Lessons",
                 showLesson: true,
                 lessons: lessons,
-                cart:[]
+                cart:[],
+                order: {
+                    name: "",
+                    phone: "",
+                },
             },
             methods: {
                 showCart () {
@@ -80,7 +98,14 @@
                         }
                     }
                     return count;
-                }
+                },
+                submitForm() {
+                    alert('Order Submitted!')
+                },
+               /* checkDetails (){
+                    this.order !== "";
+                }*/
+
             },
             computed: {
                 cartItemCount: function () {
