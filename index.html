@@ -97,7 +97,8 @@
                     <strong> Phone Number: </strong>
                     <input v-model.number="order.phone" type="number"/>
                 </p>
-                <button v-on:click="submitForm">
+                <button v-on:click="submitForm"
+                    v-show="orderDetails">
                 Checkout
                 </button>
             </div>
@@ -116,8 +117,8 @@
                     method:""
                 },
                 order: {
-                    name: "",
-                    phone: "",
+                    name: null,
+                    phone: 0,
                 },
             },
             methods: {
@@ -226,6 +227,9 @@
             computed: {
                 cartItemCount: function () {
                     return this.cart.length;
+                },
+                orderDetails: function () {
+                    return this.order.name && this.order.phone;
                 }
             },
         });
